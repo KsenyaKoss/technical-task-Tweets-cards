@@ -82,7 +82,7 @@ export const StyledAvatarImg = styled.img`
     z-index: 9999;
     transform: translate(-50%, -45%);
 
-  &::befor {
+  &::before {
     content: "";
     background: var(--btnBgc);
     box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
@@ -90,6 +90,5 @@ export const StyledAvatarImg = styled.img`
       inset 0px 4.39163px 3.29372px #fbf8ff;
     border-radius: 50%;
     overflow: hidden;
-  
   }
 `;

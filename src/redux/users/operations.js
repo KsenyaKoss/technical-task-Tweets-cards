@@ -12,3 +12,15 @@ async (_, {rejectWithValue}) => {
     return rejectWithValue(error.message)
   }
 })
+
+export const updateUser = createAsyncThunk('user/update',
+ async (newUser, {rejectWithValue}) => {
+    try {
+    const res = await axios.put(`/users/${newUser.id}`) 
+    console.log(res.data);
+    return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+ }
+)

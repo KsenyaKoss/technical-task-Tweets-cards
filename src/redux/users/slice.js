@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchUsers } from "./operations";
+import { fetchUsers, updateUser } from "./operations";
 
 const initialState = {
   users: [],
@@ -24,6 +24,20 @@ const usersSlice = createSlice({
       state.error = payload;
       state.isLoading = false;
     },
+    [updateUser.fulfilled]: (state, {payload}) => {
+      state.isLoading = false;
+      const index = state.users.findIndex(user => user.id = payload.id)
+      console.log(index);
+      state.users.splice(index, 1,  payload)
+      state.error = null;
+    },
+    [updateUser.pending]: (state)=> {
+      state.isLoading = true;
+    },
+     [updateUser.rejected]: (state, {payload}) => {
+      state.error = payload
+      state.isLoading = false
+    }
   },
 });
 
