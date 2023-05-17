@@ -23,3 +23,9 @@ export const StyledButton = styled.button`
   color: var(--btnBgc);
   cursor: pointer;
 `
+export const StyledWrapper = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+ 
+`

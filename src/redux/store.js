@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { usersReducer } from "./users/slice";
+import { filterReducer } from "./filter/slice";
 
 // import {
 //   persistStore,
@@ -31,6 +32,7 @@ import { usersReducer } from "./users/slice";
 export const store = configureStore({
     reducer: {
        users: usersReducer, 
+       filter: filterReducer,
     },
 //     middleware: getDefaultMiddleware =>
 //     getDefaultMiddleware({

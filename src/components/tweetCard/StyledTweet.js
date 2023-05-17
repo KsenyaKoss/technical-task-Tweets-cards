@@ -51,7 +51,7 @@ export const StyledButton = styled.button`
   border-radius: 10.3108px;
   border-color: transparent;
   background: ${(props) =>
-    props.subscribed ? "var(--btnHoverBgc)" : "var(--btnBgc)"};
+    props.subscribed? "var(--btnHoverBgc)" : "var(--btnBgc)"};
   font-weight: 600;
   font-size: 18px;
   line-height: 1.22;
@@ -75,20 +75,23 @@ export const StyledAvatarWrapper = styled.div`
 `;
 
 export const StyledAvatarImg = styled.img`
-  overflow: hidden;
-  position: absolute;
+    width: 50px;
+    height: auto;
+    position: absolute;
     left: 50%;
     top: 50%;
     z-index: 9999;
     transform: translate(-50%, -45%);
 
-  &::before {
+  &::after {
     content: "";
+    overflow: hidden;
+    z-index: 10000;
     background: var(--btnBgc);
     box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
       inset 0px -2.19582px 4.39163px #ae7be3,
       inset 0px 4.39163px 3.29372px #fbf8ff;
     border-radius: 50%;
-    overflow: hidden;
+   
   }
 `;

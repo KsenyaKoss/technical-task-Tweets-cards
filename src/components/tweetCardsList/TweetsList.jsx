@@ -1,4 +1,4 @@
-import Tweet from "../card/Tweet"
+import Tweet from "../tweetCard/Tweet"
 import { StyledItem, StyledList } from "./StyledTweetsList"
 
 

@@ -12,7 +12,6 @@ const usersSlice = createSlice({
   initialState,
   extraReducers: {
     [fetchUsers.fulfilled]: (state, { payload }) => {
-      console.log(payload);
       state.users = payload;
       state.isLoading = false;
       state.error = null;
@@ -26,8 +25,7 @@ const usersSlice = createSlice({
     },
     [updateUser.fulfilled]: (state, {payload}) => {
       state.isLoading = false;
-      const index = state.users.findIndex(user => user.id = payload.id)
-      console.log(index);
+      const index = state.users.findIndex(user => user.id === payload.id)
       state.users.splice(index, 1,  payload)
       state.error = null;
     },
